@@ -1,0 +1,7 @@
+---
+- name: run ansible playbook
+  hosts: ubuntu
+  remote_user: parallels
+  become: true
+  roles:
+    - hardening

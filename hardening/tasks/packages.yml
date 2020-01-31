@@ -1,0 +1,33 @@
+---
+- name: update packages 
+  package: 
+    name: '*'
+    state: latest 
+
+- name: install packages required for cyberpatriot
+  package:
+    name: "{{ item }}"
+    state: installed
+  loop:
+    - ufw
+    - clamav
+    - htop
+    - cowsay
+    - lolcat
+    - toilet
+    - figlet
+
+- name: remove packages from cyberpatriot machine
+  package:
+    name: "{{ item }}"
+    state: absent
+  loop:
+    - "{{ bad_packages }}"
+
+
+- name: find packages named .mp3
+  find:
+    paths: /
+    patterns: *.mp3
+    recurse: yes
+...

@@ -1,0 +1,14 @@
+---
+# defaults file for hardening
+bad_packages:
+  - samba
+  - samba-common
+  - pure-ftpd
+  - telnet
+  - nmap
+  - vsftpd
+  - wireshark-common
+  - apache2
+  - ophcrack
+  - zenmap
+  - wireshark
